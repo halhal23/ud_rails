@@ -1,6 +1,10 @@
 <nav class="navbar navbar-light mb-5">
   <a class="navbar-brand mr-auto" href="/" style="font-size: 30px">BoardApp</a>
-  <%= link_to "投稿一覧", boards_path, class: "navbar_brand ml-auto btn btn-outline-dark"  %>
+  <% if @current_user %>
+     <%= link_to @current_user.name, mypage_path, class: "navbar_brand ml-auto btn btn-outline-dark" %>
+  <% else %>
+  <% end %>
+  <%= link_to "投稿一覧", boards_path, class: "navbar_brand ml-4 btn btn-outline-dark"  %>
   <div class="dropdown">
     <button class="navbar_brand ml-2 btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       ユーザー

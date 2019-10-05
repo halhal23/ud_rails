@@ -1,0 +1,36 @@
+.new_user_box {
+  text-align: center;
+  padding: 20px;
+}
+
+.new_user_box input[type="text"],
+.new_user_box input[type="password"] {
+  text-align: center;
+  margin: 35px auto;
+  width: 250px;
+  padding: 14px 40px;
+  border-radius: 24px;
+  border: 3px solid #3498db;
+  background: none;
+  transition: 0.3s;
+  color: black;
+}
+
+.new_user_box input[type="text"]:focus,
+.new_user_box input[type="password"]:focus {
+  box-shadow: none;
+  width: 300px;
+  border-color: #2ecc40;
+}
+
+.new_user_box input[type="submit"] {
+  border: 2px solid #2ecc40;
+  color: gray;
+  padding: 10px 25px;
+  border-radius: 10px;
+}
+
+.new_user_box input[type="submit"]:hover {
+  background: #2ecc40;
+  color: white;
+}

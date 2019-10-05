@@ -2,16 +2,16 @@
 
 <%= form_for user do |f| %>
   <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
+    <!-- <%= f.label :name %> -->
+    <%= f.text_field :name, class: "form-control", placeholder: "ユーザ名" %>
   </div>
   <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control" %>
+    <!-- <%= f.label :password %> -->
+    <%= f.password_field :password, class: "form-control",  placeholder: "パスワード" %>
   </div>
   <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
+    <!-- <%= f.label :password_confirmation %> -->
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワード（確認）"  %>
   </div>
 
   <%= f.submit "送信", class: "btn btn-outline-dark" %>
