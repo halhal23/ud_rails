@@ -1,0 +1,11 @@
+<div class="toast p-3 mb-3 border border-dark rounded clearfix" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="/logo.png" class="rounded mr-2" alt="..." style="width: 30px; height: 30px;">
+    <strong class="mr-auto"><%= comment.name %></strong>
+    <small class="text-muted ml-5"><%= comment.created_at.to_s(:datetime_jp) %></small>
+  </div>
+  <div class="toast-body pt-3">
+    <%= simple_format(comment.comment)  %>
+  </div>
+  <div><%= link_to "削除", comment, method: :delete, data: { confirm: "削除してもよろしいですか？" }, class: "btn btn-outline-danger float-right" %></div>
+</div>

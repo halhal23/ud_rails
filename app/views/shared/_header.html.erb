@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light mb-5">
+  <a class="navbar-brand mr-auto" href="/" style="font-size: 30px">BoardApp</a>
+  <%= link_to "投稿一覧", boards_path, class: "navbar_brand ml-auto btn btn-outline-dark"  %>
+  <div class="dropdown">
+    <button class="navbar_brand ml-2 btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      ユーザー
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <% if @current_user %>
+        <%= link_to "マイページ", mypage_path, class: "dropdown-item" %>
+        <%= link_to "ログアウト", logout_path, method: :delete, class: "dropdown-item" %>
+      <% else %>
+        <%= link_to "ログイン", root_path,  class: "dropdown-item" %>
+        <%= link_to "新規登録", new_user_path, class: "dropdown-item" %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "新規投稿", new_board_path, class: "navbar_brand ml-2 btn btn-outline-dark"  %>
+</nav>

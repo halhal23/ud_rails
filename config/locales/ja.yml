@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+        password: パスワード
+        password_confirmation: パスワード（確認）
+      board:
+        name: 名前
+        title: 題名
+        body: 内容
+      comment: 
+        name: 名前
+        comment: コメント
+  views:
+    pagination:
+      first: 最初へ
+      last: 最後へ
+      next: 次へ
+      previous: 前へ
+      truncate: ...

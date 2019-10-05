@@ -1,0 +1,8 @@
+<h1>Subjects#index</h1>
+<h2>What do you mean</h2>
+<% @subjects.each do |sub|  %>
+<div class="subject-list" style="margin-bottom: 50px;">
+  <p><%= sub.name %></p>
+  <p><%= sub.detail %></p>
+</div>
+<% end %>

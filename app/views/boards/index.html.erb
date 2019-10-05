@@ -1,0 +1,33 @@
+<% if flash[:notice] %>
+  <div class="alert alert-danger"><%= flash[:notice] %></div>
+<% end %>
+
+<table class="table table-striped table-dark" id="posts">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">title</th>
+      <th scope="col">body</th>
+      <th scope="col">created</th>
+      <th scope="col">updates</th>
+      <th scope="col">delay</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @boards.each do |board| %>
+    <tr>
+      <th><%= board.id  %></th>
+      <td><%= board.name  %></td>
+      <td><%= board.title  %></td>
+      <td><%= board.body  %></td>
+      <td><%= board.created_at.to_s(:datetime_jp)  %></td>
+      <td><%= board.updated_at.to_s(:datetime_jp)  %></td>
+      <td><%= link_to '詳細', board, class: "btn btn-outline-light" %></td>
+      <td><%= link_to '削除', board, class: "btn btn-outline-light", method: :delete, data: { confirm: "削除してもよろしいですか。" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= paginate @boards %>

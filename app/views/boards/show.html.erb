@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<div class="card text-center mb-5">
+  <div class="card-header">
+    <%= @board.name %>    
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @board.title %></h5>
+    <p class="card-text"><%= simple_format(@board.body) %></p>
+    <%= link_to "編集する", edit_board_path(@board), class: "btn btn-outline-dark" %>
+  </div>
+  <div class="card-footer text-muted">
+    <%= @board.created_at.to_s(:datetime_jp) %>
+  </div>
+</div>
+
+<%= render 'shared/error_messages' %>
+<%= render @board.comments %>
+<%= render partial: 'comments/form', locals: { comment: @comment } %>
